@@ -1,0 +1,24 @@
+# Java
+*.class
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iws
+*.ipr
+*.iml
+*.eml
+*.userlibraries
+*.out
+*.lock
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
