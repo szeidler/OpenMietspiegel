@@ -4,6 +4,6 @@ Repository für die Auswertung der veröffentlichten Mietspiegel der Senatsverwa
 ## Installation
 
 1. git clone git@github.com:kantorix/OpenMietspiegel.git
-2. Create a new project from file system in your favorite IDE (Eclipse/IntelliJ)
-3. Add 3 PDFBox + depending libaries
+2. Legt ein neues Projekt in eurer favorisierten IDE (Eclipse, IntelliJ, o.ä.) an
+3. Hinzufügen der 3 Libraries (PDFBox + Abhängigkeiten) in den BuildPath
 4. Code all the code…
