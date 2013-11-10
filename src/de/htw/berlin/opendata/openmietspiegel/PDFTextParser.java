@@ -10,7 +10,7 @@ import org.apache.pdfbox.util.PDFTextStripper;
 
 public class PDFTextParser {
 
-	String convertPDFToString(String fileName) {
+	public String convertPDFToString(String fileName) {
 		PDFParser parser;
 		String parsedText = null;
 		PDDocument pdDoc = null;
