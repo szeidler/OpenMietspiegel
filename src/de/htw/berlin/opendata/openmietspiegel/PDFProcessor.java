@@ -22,6 +22,7 @@ public class PDFProcessor {
 				districts.add(lastDistrict);
 			} else {
 				// it's a subdistrict
+				//@TODO Find a solution for double lines: Stadtrandsiedlung Malchow
 				String[] items = line.split("\\s(?=\\S*$)");
 				if (items.length > 1) {
 					subDistricts.add(new SubDistrict(items[1], items[0], lastDistrict));
