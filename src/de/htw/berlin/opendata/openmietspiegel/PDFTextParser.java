@@ -31,7 +31,8 @@ public class PDFTextParser {
 			cosDoc = parser.getDocument();
 			PDFTextStripper pdfStripper = new PDFTextStripper();
 			pdDoc = new PDDocument(cosDoc);
-			pdfStripper.setStartPage(3);
+			pdfStripper.setStartPage(2);
+			pdfStripper.setEndPage(2);
 			parsedText = pdfStripper.getText(pdDoc);
 		} catch (Exception e) {
 			System.err.println("An exception occured in parsing the PDF Document." + e.getMessage());
