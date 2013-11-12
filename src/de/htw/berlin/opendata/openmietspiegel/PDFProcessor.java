@@ -22,10 +22,13 @@ public class PDFProcessor {
 				districts.add(lastDistrict);
 			} else {
 				// it's a subdistrict
-				//@TODO Find a solution for double lines: Stadtrandsiedlung Malchow
 				String[] items = line.split("\\s(?=\\S*$)");
-				if (items.length > 1) {
-					subDistricts.add(new SubDistrict(items[1], items[0], lastDistrict));
+				//@TODO Find a proper solution for double lines: Stadtrandsiedlung Malchow
+				if (items[1].equals("StaMa")) {
+					items[0] = "Stadtrandsiedlung Malchow";
+				}
+				if (!items[0].isEmpty() && !items[1].isEmpty()) {
+					subDistricts.add(new SubDistrict(items[1], items[0].trim(), lastDistrict));
 				}
 			}
 		}
