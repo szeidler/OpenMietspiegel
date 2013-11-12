@@ -17,16 +17,19 @@ public class PDFProcessor {
 			String line = pdfLineByLine.get(i);
 			if (!Character.isWhitespace(line.charAt(0))) {
 				// it's a district
-				String[] items = line.split("\\s", 2);
+				String[] items = line.split("\\s");
 				lastDistrict = new District(items[0], items[1]);
 				districts.add(lastDistrict);
 			} else {
 				// it's a subdistrict
-				String[] items = line.split(" ", -1);
-				if (items.length > 2) {
-					subDistricts.add(new SubDistrict(items[2], items[1], lastDistrict));
+				String[] items = line.split("\\s(?=\\S*$)");
+				if (items.length > 1) {
+					subDistricts.add(new SubDistrict(items[1], items[0], lastDistrict));
 				}
 			}
+		}
+		for(SubDistrict item :subDistricts) {
+			System.out.println(item.toString());
 		}
 	}
 }
