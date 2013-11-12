@@ -16,7 +16,6 @@ public class PDFProcessor {
 		for (int i = 3; i < pdfLineByLine.size() - 1; i++) {
 			String line = pdfLineByLine.get(i);
 			if (!Character.isWhitespace(line.charAt(0))) {
-				System.out.println(line);
 				// it's a district
 				String[] items = line.split("\\s", 2);
 				lastDistrict = new District(items[0], items[1]);
