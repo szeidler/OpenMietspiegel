@@ -27,10 +27,17 @@ public class PDFProcessor {
 				if (items[1].equals("StaMa")) {
 					items[0] = "Stadtrandsiedlung Malchow";
 				}
+				//@TODO Find a proper solution for multiple whitespace
+				if (items[1].equals("Lich")) {
+					items[0] = "Lichtenberg";
+				}
 				if (!items[0].isEmpty() && !items[1].isEmpty()) {
 					subDistricts.add(new SubDistrict(items[1], items[0].trim(), lastDistrict));
 				}
 			}
+		}
+		for(District item :districts) {
+			System.out.println(item.toString());
 		}
 		for(SubDistrict item :subDistricts) {
 			System.out.println(item.toString());
