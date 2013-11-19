@@ -18,6 +18,10 @@ public class PDFProcessor {
 			if (!Character.isWhitespace(line.charAt(0))) {
 				// it's a district
 				String[] items = line.split("\\s");
+				//@TODO Find a proper solution for multiple whitespace
+				if (items[0].equals("Lich")) {
+					items[1] = "Lichtenberg";
+				}
 				lastDistrict = new District(items[0], items[1]);
 				districts.add(lastDistrict);
 			} else {

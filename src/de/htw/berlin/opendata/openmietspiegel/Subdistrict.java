@@ -17,4 +17,9 @@ public class SubDistrict extends District {
 	public void setParent(District parent) {
 		this.parent = parent;
 	}
+
+	@Override
+	public String toString() {
+		return "Subdistrict{" + "name='" + name + '\'' + ", shortName='" + shortName + '\'' + ", parent='" + parent.getName() + '\'' + '}';
+	}
 }
