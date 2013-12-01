@@ -12,7 +12,7 @@ public class StreetObject {
 	private AreaRating rating;
 	private boolean hasNoisePollution;
 
-	public StreetObject(String fromAddress, String toStreetNumber) {
+	public StreetObject(String fromAddress, String toStreetNumber, String fromStreetNumber) {
 		this.fromStreetNumber = fromStreetNumber;
 		this.toStreetNumber = toStreetNumber;
 	}

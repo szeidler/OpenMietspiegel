@@ -1,9 +1,12 @@
 package de.htw.berlin.opendata.openmietspiegel;
 
+import java.util.ArrayList;
+
 public class District {
 
 	protected String name;
 	protected String shortName;
+	protected ArrayList<SubDistrict> subDistricts = new ArrayList<SubDistrict>();
 
 	public District() {
 	}

@@ -10,6 +10,8 @@ public class Main {
 		PDFTextParser pdf = new PDFTextParser();
 		String pdfText = pdf.convertPDFToString("resources/Strassenverzeichnis2013.pdf");
 		PDFProcessor pdfProcessor = new PDFProcessor();
-		pdfProcessor.process(pdfText);
+		pdfProcessor.processDistricts(pdfText);
+		pdfText = pdf.convertPDFToString("resources/Strassenverzeichnis2013.pdf", 3, 243);
+		pdfProcessor.processData(pdfText);
 	}
 }

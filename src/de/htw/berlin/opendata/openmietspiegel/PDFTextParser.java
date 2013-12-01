@@ -10,7 +10,12 @@ import org.apache.pdfbox.util.PDFTextStripper;
 
 public class PDFTextParser {
 
-	public String convertPDFToString(String fileName) {
+	public String convertPDFToString(String fileName)
+	{
+		return convertPDFToString(fileName, 2, 2);
+	}
+	
+	public String convertPDFToString(String fileName, int startPage, int endPage) {
 		PDFParser parser;
 		String parsedText = null;
 		PDDocument pdDoc = null;
@@ -31,8 +36,8 @@ public class PDFTextParser {
 			cosDoc = parser.getDocument();
 			PDFTextStripper pdfStripper = new PDFTextStripper();
 			pdDoc = new PDDocument(cosDoc);
-			pdfStripper.setStartPage(2);
-			pdfStripper.setEndPage(2);
+			pdfStripper.setStartPage(startPage);
+			pdfStripper.setEndPage(endPage);
 			parsedText = pdfStripper.getText(pdDoc);
 		} catch (Exception e) {
 			System.err.println("An exception occured in parsing the PDF Document." + e.getMessage());
