@@ -138,32 +138,32 @@ public class PDFProcessor {
 						{
 							index--;
 						}
-						
-						// hausnummern mit buchstaben beinhalten ein extra leerzeichen 
+
+						// hausnummern mit buchstaben beinhalten ein extra leerzeichen
 						if ( !this.isNumeric(items[index]) )
 						{
 							streetNumberTo = items[index];
 							index--;
 						}
 						
-						streetNumberTo += items[index];
+						streetNumberTo += new StringBuilder(items[index]).reverse().toString();
 						index--;
-						
+
 						streetNumberTo = new StringBuilder(streetNumberTo).reverse().toString();
-						
+
 						// whitespaces ignorieren
 						while ( items[index].equals("-") || items[index].equals("") )
 						{
 							index--;
 						}
-						
+
 						if ( !this.isNumeric(items[index]) )
 						{
 							streetNumberFrom = items[index];
 							index--;
 						}
 						
-						streetNumberFrom += items[index];
+						streetNumberFrom += new StringBuilder(items[index]).reverse().toString();
 						index--;
 						
 						streetNumberFrom = new StringBuilder(streetNumberFrom).reverse().toString();
@@ -189,7 +189,7 @@ public class PDFProcessor {
 						streetName += items[i];
 					}
 					street = new Street(streetName);
-					
+
 					so = new StreetObject(streetNumberFrom);
 					so.setArea(area);
 					so.setDistrict(dis);
@@ -198,7 +198,7 @@ public class PDFProcessor {
 					so.setStreetNumberClassification(snc);
 					so.setToStreetNumber(streetNumberTo);
 					so.setStreet(street);
-					
+
 					return so;
 	}
 
